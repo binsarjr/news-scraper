@@ -1,0 +1,6 @@
+cursor
+.tmp
+.cursor_*
+__pycache__
+*.py[cod]
+venv
