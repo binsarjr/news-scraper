@@ -48,7 +48,8 @@ from news_scraper.spiders.Detik import DetikSpider
 # from news_scraper.spiders.Kontan import KontanSpider
 # from news_scraper.spiders.Viva import VivaSpider
 # from news_scraper.spiders.Okezone import OkezoneSpider
-# from news_scraper.spiders.Idntimes import IdntimesSpider
+from news_scraper.spiders.Idntimes import IdntimesSpider
+
 # from news_scraper.spiders.Mongabay import MongabaySpider
 
 
@@ -88,7 +89,7 @@ process.crawl(CnnSpider, **spider_args)
 # process.crawl(KompasSpider, **spider_args)
 # process.crawl(TribunSpider, **spider_args)
 # process.crawl(OkezoneSpider, **spider_args)
-# process.crawl(IdntimesSpider, **spider_args)
+process.crawl(IdntimesSpider, **spider_args)
 # process.crawl(MongabaySpider, **spider_args)
 
 process.start()
