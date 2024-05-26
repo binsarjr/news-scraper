@@ -45,7 +45,7 @@ from news_scraper.spiders.Kompas import KompasSpider
 # from news_scraper.spiders.Tribun import TribunSpider
 from news_scraper.spiders.Detik import DetikSpider
 
-# from news_scraper.spiders.Liputan6 import Liputan6Spider
+from news_scraper.spiders.Liputan6 import Liputan6Spider
 from news_scraper.spiders.Kontan import KontanSpider
 
 # from news_scraper.spiders.Viva import VivaSpider
@@ -85,7 +85,7 @@ process = CrawlerProcess(spider_settings)
 
 # process.crawl(VivaSpider, **spider_args)
 process.crawl(KontanSpider, **spider_args)
-# process.crawl(Liputan6Spider, **spider_args)
+process.crawl(Liputan6Spider, **spider_args)
 process.crawl(DetikSpider, **spider_args)
 process.crawl(CnnSpider, **spider_args)
 process.crawl(KompasSpider, **spider_args)
