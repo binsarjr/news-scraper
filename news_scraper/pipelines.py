@@ -43,6 +43,10 @@ class DateFilterPipeline:
             else None
         )
 
+        item["created_at"] = getattr(item, "created_at", None)
+        if getattr(item, "publish_date", None) is not None:
+            item["created_at"] = getattr(item, "publish_date", None)
+
         # verify date with since and until but two of this can be None
         if item["created_at"] is None:
             raise DropItem("Item has no created_at")

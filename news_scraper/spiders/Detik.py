@@ -69,7 +69,7 @@ class DetikSpider(scrapy.Spider):
 
             yield {
                 "title": title,
-                "created_at": indo_to_datetime(publish_date),
+                "publish_date": indo_to_datetime(publish_date),
                 "author": author,
                 "content": content,
                 "keyword": response.meta["keyword"],

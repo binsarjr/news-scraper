@@ -74,7 +74,7 @@ class CnnSpider(scrapy.Spider):
             yield {
                 "link": response.url,
                 "title": title,
-                "created_at": myparser.indo_to_datetime(publish_date),
+                "publish_date": myparser.indo_to_datetime(publish_date),
                 "content": f"""
 judul: {title}
 author: {author}
