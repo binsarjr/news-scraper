@@ -16,3 +16,11 @@ with date
 ```bash
 poetry run scrapy crawl CNN -a keyword=indonesia -a since=2023-01-01 -a until=2023-01-31 -o data.csv
 ```
+
+
+
+or 
+
+```bash
+poetry run python main.py
+```
