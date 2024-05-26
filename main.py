@@ -40,7 +40,8 @@ if query_yes_no("Are you sure?") is False:
 from scrapy.crawler import CrawlerProcess
 from news_scraper.spiders.CNN import CnnSpider
 
-# from news_scraper.spiders.Kompas import KompasSpider
+from news_scraper.spiders.Kompas import KompasSpider
+
 # from news_scraper.spiders.Tribun import TribunSpider
 from news_scraper.spiders.Detik import DetikSpider
 
@@ -86,7 +87,7 @@ process = CrawlerProcess(spider_settings)
 # process.crawl(Liputan6Spider, **spider_args)
 process.crawl(DetikSpider, **spider_args)
 process.crawl(CnnSpider, **spider_args)
-# process.crawl(KompasSpider, **spider_args)
+process.crawl(KompasSpider, **spider_args)
 # process.crawl(TribunSpider, **spider_args)
 # process.crawl(OkezoneSpider, **spider_args)
 process.crawl(IdntimesSpider, **spider_args)
