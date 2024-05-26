@@ -918,6 +918,21 @@ w3lib = ">=1.17.0"
 "zope.interface" = ">=5.1.0"
 
 [[package]]
+name = "scrapy-useragents"
+version = "0.0.1"
+description = "A middleware to change user-agent in request for Scrapy"
+optional = false
+python-versions = "*"
+files = [
+    {file = "Scrapy-UserAgents-0.0.1.tar.gz", hash = "sha256:caa6d5b3bdbddcd79678caad3bae5d5cd0f3a96144807acf491925795e75c44e"},
+    {file = "Scrapy_UserAgents-0.0.1-py2.py3-none-any.whl", hash = "sha256:316ef88068aa5107591e97c9d04a75effc2600914ac7198bbed52a1c65a4434c"},
+]
+
+[package.dependencies]
+PyPyDispatcher = {version = ">=2.1.0", markers = "platform_python_implementation == \"PyPy\""}
+scrapy = ">=1.4.0"
+
+[[package]]
 name = "service-identity"
 version = "24.1.0"
 description = "Service identity verification for pyOpenSSL & cryptography."
@@ -1186,4 +1201,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "a93ef171bb0300995d7d5f34a33969d69de460d76b72f3fa283040b84668435e"
+content-hash = "910ab8763e49098500eba4214c8d9ec402026e3dbfc945644d72a1ef95a55c0b"
