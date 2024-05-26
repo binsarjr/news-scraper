@@ -1,4 +1,5 @@
 import scrapy, news_scraper.utils as myparser
+from news_scraper.items import NewsScraperItem
 
 
 from bs4 import BeautifulSoup
@@ -71,16 +72,20 @@ class CnnSpider(scrapy.Spider):
 
             content = article.text.strip()
 
-            yield {
-                "link": response.url,
-                "title": title,
-                "publish_date": myparser.indo_to_datetime(publish_date),
-                "content": f"""
+            item = NewsScraperItem()
+            item["title"] = title
+            item["publish_date"] = myparser.indo_to_datetime(publish_date)
+            item["author"] = author
+            item["content"] = (
+                f"""
 judul: {title}
 author: {author}
 tanggal: {publish_date}
 {content}
-""".strip(),
-                "source": response.meta["source"],
-                "keyword": response.meta["keyword"],
-            }
+""".strip()
+            )
+            item["keyword"] = response.meta["keyword"]
+            item["source"] = response.meta["source"]
+            item["link"] = response.url
+
+            yield item

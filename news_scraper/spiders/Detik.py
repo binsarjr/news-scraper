@@ -1,4 +1,5 @@
 import scrapy
+from news_scraper.items import NewsScraperItem
 from bs4 import BeautifulSoup
 from news_scraper.utils import *
 
@@ -67,12 +68,13 @@ class DetikSpider(scrapy.Spider):
             content = soup.select_one("div.detail__body-text")
             content = content.text if content else ""
 
-            yield {
-                "title": title,
-                "publish_date": indo_to_datetime(publish_date),
-                "author": author,
-                "content": content,
-                "keyword": response.meta["keyword"],
-                "source": response.meta["source"],
-                "link": response.url,
-            }
+            item = NewsScraperItem()
+            item["title"] = title
+            item["publish_date"] = indo_to_datetime(publish_date)
+            item["author"] = author
+            item["content"] = content
+            item["keyword"] = response.meta["keyword"]
+            item["source"] = response.meta["source"]
+            item["link"] = response.url
+
+            yield item
