@@ -9,8 +9,6 @@ class CnnSpider(scrapy.Spider):
     allowed_domains = ["cnnindonesia.com"]
     handle_httpstatus_list = [301]
     custom_settings = {
-        "CONCURRENT_REQUESTS": 30,
-        # "DOWNLOAD_DELAY": 5,
         "ITEM_PIPELINES": {
             "news_scraper.pipelines.DateFilterPipeline": 110,
         },
