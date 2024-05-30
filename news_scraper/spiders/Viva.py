@@ -12,10 +12,7 @@ class VivaSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            "news_scraper.pipelines.NewsPipeline": 100,
             "news_scraper.pipelines.DateFilterPipeline": 110,
-            "news_scraper.pipelines.SentimentPipeline": 200,
-            "news_scraper.pipelines.PostgresPipeline": 300,
         },
     }
 
