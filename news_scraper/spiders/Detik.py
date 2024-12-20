@@ -38,14 +38,16 @@ class DetikSpider(scrapy.Spider):
     def parse_search(self, response):
         soup = BeautifulSoup(response.text, "html.parser")
 
-        for paging in soup.select(".paging > a"):
-            yield scrapy.Request(
+        for paging in soup.select(".pagination > a"):
+            href = paging.get("href")
+            if href:
+              yield scrapy.Request(
                 url=paging.get("href"),
                 callback=self.parse_search,
                 meta=response.meta,
-            )
+              )
 
-        for article in soup.select(".list-berita > article"):
+        for article in soup.select(".list-content > article"):
             yield scrapy.Request(
                 url=article.select_one("a").get("href"),
                 callback=self.parse,
