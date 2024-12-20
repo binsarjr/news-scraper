@@ -4,3 +4,4 @@ cursor
 __pycache__
 *.py[cod]
 venv
+poetry.lock
